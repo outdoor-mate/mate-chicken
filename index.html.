@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메이트 치킨</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function changeLang(lang) {
+      const translations = {
+        'ko': {
+          title: '메이트 치킨',
+          slogan: '맛과 정성으로 함께하는 당신의 메이트',
+          infoTitle: '📞 매장 정보',
+          phone: '전화번호:',
+          hours: '운영시간:',
+          allergyTitle: '⚠️ 알러지 유의사항',
+          allergyText: '일부 메뉴에는 <strong>가지</strong> 및 <strong>병아리콩</strong>이 포함되어 있습니다.<br> 알레르기가 있으신 분은 꼭 직원에게 말씀해주세요.',
+          noticeTitle: '📢 가게 알림',
+          noticeText: '<strong>5인 이상 단체 고객</strong>께서는 미리 예약 부탁드립니다 🙏'
+        },
+        'en': {
+          title: 'Mate Chicken',
+          slogan: 'Your delicious and reliable chicken mate',
+          infoTitle: '📞 Store Information',
+          phone: 'Phone:',
+          hours: 'Hours:',
+          allergyTitle: '⚠️ Allergy Info',
+          allergyText: 'Some menu items contain <strong>eggplant</strong> and <strong>chickpeas</strong>.<br> Please inform staff if you have allergies.',
+          noticeTitle: '📢 Notice',
+          noticeText: '<strong>Groups of 5 or more</strong> are kindly requested to make a reservation 🙏'
+        },
+        'ja': {
+          title: 'メイトチキン',
+          slogan: '味と心を込めたあなたのチキンメイト',
+          infoTitle: '📞 店舗情報',
+          phone: '電話番号:',
+          hours: '営業時間:',
+          allergyTitle: '⚠️ アレルギー注意',
+          allergyText: '一部のメニューには<strong>ナス</strong>や<strong>ひよこ豆</strong>が含まれています。<br> アレルギーがある方はスタッフにお知らせください。',
+          noticeTitle: '📢 お知らせ',
+          noticeText: '<strong>5人以上のグループ</strong>は事前予約をお願いいたします 🙏'
+        },
+        'zh': {
+          title: '伙伴炸鸡',
+          slogan: '用心为您服务的美味伙伴',
+          infoTitle: '📞 店铺信息',
+          phone: '电话：',
+          hours: '营业时间：',
+          allergyTitle: '⚠️ 过敏信息',
+          allergyText: '部分菜单包含<strong>茄子</strong>和<strong>鹰嘴豆</strong>。<br> 如有过敏，请提前告知店员。',
+          noticeTitle: '📢 店铺通知',
+          noticeText: '<strong>5人以上的顾客</strong>请提前预约 🙏'
+        }
+      };
+
+      const t = translations[lang];
+      document.getElementById('main-title').innerHTML = t.title;
+      document.getElementById('sub-title').innerHTML = t.slogan;
+      document.getElementById('info-title').innerHTML = t.infoTitle;
+      document.getElementById('phone-label').innerHTML = t.phone;
+      document.getElementById('hours-label').innerHTML = t.hours;
+      document.getElementById('allergy-title').innerHTML = t.allergyTitle;
+      document.getElementById('allergy-text').innerHTML = t.allergyText;
+      document.getElementById('notice-title').innerHTML = t.noticeTitle;
+      document.getElementById('notice-text').innerHTML = t.noticeText;
+    }
+  </script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+  <!-- Header -->
+  <header class="bg-blue-500 p-6 text-center shadow-md">
+    <h1 id="main-title" class="text-4xl font-bold text-white">메이트 치킨</h1>
+    <p id="sub-title" class="mt-2 text-white">맛과 정성으로 함께하는 당신의 메이트</p>
+    <div class="mt-4">
+      <button onclick="changeLang('ko')" class="mx-2 bg-white text-blue-500 px-3 py-1 rounded shadow">한국어</button>
+      <button onclick="changeLang('en')" class="mx-2 bg-white text-blue-500 px-3 py-1 rounded shadow">English</button>
+      <button onclick="changeLang('ja')" class="mx-2 bg-white text-blue-500 px-3 py-1 rounded shadow">日本語</button>
+      <button onclick="changeLang('zh')" class="mx-2 bg-white text-blue-500 px-3 py-1 rounded shadow">中文</button>
+    </div>
+  </header>
+
+  <!-- Main Info -->
+  <main class="max-w-2xl mx-auto px-4 py-8">
+    <section class="mb-8">
+      <h2 id="info-title" class="text-2xl font-semibold mb-4">📞 매장 정보</h2>
+      <ul class="space-y-2 text-lg">
+        <li><strong id="phone-label">전화번호:</strong> 010-0000-0000</li>
+        <li><strong id="hours-label">운영시간:</strong> 매일 11:00 ~ 22:00</li>
+      </ul>
+    </section>
+
+    <section class="mb-8">
+      <h2 id="allergy-title" class="text-2xl font-semibold mb-4">⚠️ 알러지 유의사항</h2>
+      <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4">
+        <p id="allergy-text">일부 메뉴에는 <strong>가지</strong> 및 <strong>병아리콩</strong>이 포함되어 있습니다.<br> 알레르기가 있으신 분은 꼭 직원에게 말씀해주세요.</p>
+      </div>
+    </section>
+
+    <section class="mb-8">
+      <h2 id="notice-title" class="text-2xl font-semibold mb-4">📢 가게 알림</h2>
+      <div class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4">
+        <p id="notice-text"><strong>5인 이상 단체 고객</strong>께서는 미리 예약 부탁드립니다 🙏</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 text-center py-6 text-sm text-gray-600">
+    &copy; 2025 메이트 치킨. All rights reserved.
+  </footer>
+</body>
+</html>
